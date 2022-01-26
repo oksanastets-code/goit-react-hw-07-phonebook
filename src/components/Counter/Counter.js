@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Controls from './Controls';
 import Value from './Value';
-import * as actions from '../redux/actions';
+import * as actions from '../redux/Counter/counter-actions';
 import './Counter.css';
 
 function Counter({ value, step, onIncrement, onDecrement }) {
