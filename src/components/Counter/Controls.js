@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Controls = ({ onIncrement, onDecrement }) => (
+const Controls = ({ step, onIncrement, onDecrement }) => (
   <div className="Counter__controls">
     <button type="button" onClick={onIncrement}>
-      Увеличить на 1
+     + { step}
     </button>
     <button type="button" onClick={onDecrement}>
-      Уменьшить на 1
+      - {step}
     </button>
   </div>
 );
