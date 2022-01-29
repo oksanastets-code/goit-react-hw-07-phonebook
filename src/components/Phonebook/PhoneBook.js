@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
-
-// import Phonebook from './Phonebook';
+import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import toast, { Toaster } from 'react-hot-toast';
-import initialContacts from './Phonebook/contacts.json';
-import NameEditor from './Phonebook/NameEditor';
-import ContactList from './Phonebook/ContactList';
-import Filter from './Phonebook/Filter';
-import { Container } from './Phonebook/PhoneBook.styled';
-
-import Counter from './Counter';
-
-
-
-
+import initialContacts from './contacts.json';
+import NameEditor from './NameEditor';
+import ContactList from './ContactList';
+import Filter from './Filter';
+import { Container } from './PhoneBook.styled';
 class App extends Component {
-   state = {
+  state = {
     contacts: [],
     filter: '',
   };
@@ -65,13 +57,10 @@ class App extends Component {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
-
   render() {
-    
- const foundedContacts = this.getFoundedContacts();
+    const foundedContacts = this.getFoundedContacts();
     return (
-      <>
-         <Container>
+      <Container>
         <Toaster />
         <h1>Phonebook</h1>
         <NameEditor onSubmit={this.addContact} />
@@ -79,11 +68,7 @@ class App extends Component {
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <ContactList contacts={foundedContacts} onDeleteContact={this.deleteContact} />
       </Container>
-        <Counter initialValue={10} />
-      </>
-
     );
   }
 }
-
 export default App;

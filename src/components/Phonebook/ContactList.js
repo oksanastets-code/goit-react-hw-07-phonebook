@@ -1,11 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  ListWrapper,
-  ContactItem,
-  List,
-  ContactData,
-  DeleteButton,
-} from './ContactList.styled';
+import { ListWrapper, ContactItem, List, ContactData, DeleteButton } from './ContactList.styled';
 const ContactList = ({ contacts, onDeleteContact }) => (
   <ListWrapper>
     <List>
@@ -14,9 +8,7 @@ const ContactList = ({ contacts, onDeleteContact }) => (
           <ContactData>
             {name}: {number}
           </ContactData>
-          <DeleteButton onClick={() => onDeleteContact(id)}>
-            Delete
-          </DeleteButton>
+          <DeleteButton onClick={() => onDeleteContact(id)}>Delete</DeleteButton>
         </ContactItem>
       ))}
     </List>
