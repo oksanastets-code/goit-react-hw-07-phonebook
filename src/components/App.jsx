@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import NameEditor from './Phonebook/NameEditor';
 import ContactList from './Phonebook/ContactList';
-// import Filter from './Phonebook/Filter';
+import Filter from './Phonebook/Filter';
 import { Container } from './Phonebook/PhoneBook.styled';
 
 import Counter from './Counter';
@@ -14,10 +14,7 @@ import Counter from './Counter';
 
 
 class App extends Component {
-  //  state = {
-    // contacts: [],
-    // filter: '',
-  // };
+ 
   // addContact = (name, number) => {
   //   const contact = {
   //     id: nanoid(),
@@ -36,19 +33,7 @@ class App extends Component {
   //   return;
   // };
 
-  // deleteContact = contactId => {
-  //   this.setState(prevState => ({
-  //     contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-  //   }));
-  // };
-  // changeFilter = e => {
-  //   this.setState({ filter: e.currentTarget.value });
-  // };
-  // getFoundedContacts = () => {
-  //   const { filter, contacts } = this.state;
-  //   const normalizedFilter = filter.toLowerCase();
-  //   return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
-  // };
+  
   // componentDidMount() {
   //   console.log('App componentDidMount');
   //   const contacts = localStorage.getItem('contacts');
@@ -68,7 +53,6 @@ class App extends Component {
 
   render() {
     
-//  const foundedContacts = this.getFoundedContacts();
     return (
       <>
          <Container>
@@ -76,11 +60,8 @@ class App extends Component {
         <h1>Phonebook</h1>
         <NameEditor />
         <h2>Contacts</h2>
-        {/* <Filter value={this.state.filter} onChange={this.changeFilter} /> */}
-          <ContactList
-            // contacts={foundedContacts}
-            // onDeleteContact={this.deleteContact}
-          />
+          <Filter />
+          <ContactList />
       </Container>
         <Counter initialValue={10} />
       </>

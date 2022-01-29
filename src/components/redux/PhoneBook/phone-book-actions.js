@@ -5,7 +5,6 @@ import {
     ADD,
     DELETE,
     CHANGE_FILTER,
-    GET_FOUNDED_CONTACTS
 } from './phone-book-types';
 
 export const addContact = (nick, number) => ({
@@ -19,4 +18,8 @@ export const addContact = (nick, number) => ({
 export const deleteContact = contactId => ({
     type: DELETE,
     payload: contactId,
+});
+export const changeFilter = (value) => ({
+    type: CHANGE_FILTER,
+    payload: value,
 })
