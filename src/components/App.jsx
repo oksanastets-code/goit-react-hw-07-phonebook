@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-
-// import Phonebook from './Phonebook';
-// import { nanoid } from 'nanoid';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import NameEditor from './Phonebook/NameEditor';
 import ContactList from './Phonebook/ContactList';
 import Filter from './Phonebook/Filter';
@@ -13,27 +10,7 @@ import Counter from './Counter';
 
 
 
-class App extends Component {
- 
-  // addContact = (name, number) => {
-  //   const contact = {
-  //     id: nanoid(),
-  //     name,
-  //     number,
-  //   };
-  //   if (this.state.contacts.find(contact => contact.name === name)) {
-  //     const notify = `${name} is already on list`;
-  //     toast.error(notify);
-  //     return;
-  //   }
-  //   this.setState(prevState => ({
-  //     contacts: [...prevState.contacts, contact],
-  //   }));
-  //   toast.success('Contact added!');
-  //   return;
-  // };
-
-  
+class App extends Component { 
   // componentDidMount() {
   //   console.log('App componentDidMount');
   //   const contacts = localStorage.getItem('contacts');
