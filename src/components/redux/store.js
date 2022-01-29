@@ -1,5 +1,7 @@
-import { createStore, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+// import { combineReducers } from 'redux';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 import counterReducer from './Counter/counter-reducer';
 import phonebookReducer from './PhoneBook/phone-book-reducer';
 // const initialState = {
@@ -74,10 +76,21 @@ import phonebookReducer from './PhoneBook/phone-book-reducer';
 //       return state;
 //   }
 // }
-const rootReducer = combineReducers({
+// const rootReducer = combineReducers({
+//     counter: counterReducer,
+//     phonebook: phonebookReducer,
+// });
+// const store = createStore(rootReducer, composeWithDevTools());
+const middleware = [
+  ...getDefaultMiddleware(), logger,
+];
+const store = configureStore({
+  reducer: {
     counter: counterReducer,
     phonebook: phonebookReducer,
+  },
+  middleware,
+  devTools: process.env.NODE_ENV === 'development',
 });
-const store = createStore(rootReducer, composeWithDevTools());
 
 export default store;
