@@ -1,9 +1,11 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import {addContact }  from '../redux/PhoneBook/phone-book-actions';
 import PropTypes from 'prop-types';
 import { Form, Label, InputField, AddButton } from './NameEditor.styled';
 class NameEditor extends Component {
   state = {
-    name: '',
+    nick: '',
     number: '',
   };
   handleForm = e => {
@@ -12,9 +14,9 @@ class NameEditor extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    const { name, number } = this.state;
-    this.props.onSubmit(name, number);
-    this.setState({ name: '', number: '' });
+    const { nick, number } = this.state;
+    this.props.onSubmit(nick, number);
+    this.setState({ nick: '', number: '' });
   };
   render() {
     return (
@@ -24,8 +26,8 @@ class NameEditor extends Component {
             Name
             <InputField
               type="text"
-              name="name"
-              value={this.state.name}
+              name="nick"
+              value={this.state.nick}
               onChange={this.handleForm}
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -55,4 +57,8 @@ class NameEditor extends Component {
 NameEditor.propTypes = {
   onSubmit: PropTypes.func,
 };
-export default NameEditor;
+
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (nick, number) => dispatch(addContact(nick, number))
+})
+export default connect(null, mapDispatchToProps)(NameEditor);

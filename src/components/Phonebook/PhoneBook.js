@@ -8,26 +8,26 @@ import Filter from './Filter';
 import { Container } from './PhoneBook.styled';
 class App extends Component {
   state = {
-    contacts: [],
-    filter: '',
+    // contacts: [],
+    // filter: '',
   };
-  addContact = (name, number) => {
-    const contact = {
-      id: nanoid(),
-      name,
-      number,
-    };
-    if (this.state.contacts.find(contact => contact.name === name)) {
-      const notify = `${name} is already on list`;
-      toast.error(notify);
-      return;
-    }
-    this.setState(prevState => ({
-      contacts: [...prevState.contacts, contact],
-    }));
-    toast.success('Contact added!');
-    return;
-  };
+//   addContact = (name, number) => {
+//     const contact = {
+//       id: nanoid(),
+//       name,
+//       number,
+//     };
+//     if (this.state.contacts.find(contact => contact.name === name)) {
+//       const notify = `${name} is already on list`;
+//       toast.error(notify);
+//       return;
+//     }
+//     this.setState(prevState => ({
+//       contacts: [...prevState.contacts, contact],
+//     }));
+//     toast.success('Contact added!');
+//     return;
+//   };
   deleteContact = contactId => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
