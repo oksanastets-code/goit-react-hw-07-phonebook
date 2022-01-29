@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 // import Phonebook from './Phonebook';
 // import { nanoid } from 'nanoid';
 import toast, { Toaster } from 'react-hot-toast';
-// import initialContacts from './Phonebook/contacts.json';
 import NameEditor from './Phonebook/NameEditor';
 // import ContactList from './Phonebook/ContactList';
 // import Filter from './Phonebook/Filter';

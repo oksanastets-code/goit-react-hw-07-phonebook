@@ -5,15 +5,17 @@ import {
     CHANGE_FILTER,
     GET_FOUNDED_CONTACTS
 } from './phone-book-types';
+import initialContacts from '../../Phonebook/contacts.json';
 
 // phonebook: {
 //     contacts: [],
 //     filter: '',
 //   },
     
-const contacts = (state = [], { type, payload }) => {
+const contacts = (state = initialContacts, { type, payload }) => {
     switch (type) { 
-        case 'ADD':
+        case ADD:
+            console.log('add');
             return [...state, payload];
 
             
