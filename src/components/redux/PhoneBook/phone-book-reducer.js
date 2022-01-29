@@ -15,8 +15,13 @@ import initialContacts from '../../Phonebook/contacts.json';
 const contacts = (state = initialContacts, { type, payload }) => {
     switch (type) { 
         case ADD:
-            console.log('add');
-            return [...state, payload];
+            state = [...state, payload];
+            console.log(state);
+            return state;
+        case DELETE:
+            state = state.filter(({ id }) => id !== payload);
+            console.log(state);
+            return state;
 
             
             

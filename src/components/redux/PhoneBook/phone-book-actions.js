@@ -16,3 +16,7 @@ export const addContact = (nick, number) => ({
         number: number,
     }
 });
+export const deleteContact = contactId => ({
+    type: DELETE,
+    payload: contactId,
+})

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // import { nanoid } from 'nanoid';
 import toast, { Toaster } from 'react-hot-toast';
 import NameEditor from './Phonebook/NameEditor';
-// import ContactList from './Phonebook/ContactList';
+import ContactList from './Phonebook/ContactList';
 // import Filter from './Phonebook/Filter';
 import { Container } from './Phonebook/PhoneBook.styled';
 
@@ -77,7 +77,10 @@ class App extends Component {
         <NameEditor />
         <h2>Contacts</h2>
         {/* <Filter value={this.state.filter} onChange={this.changeFilter} /> */}
-        {/* <ContactList contacts={foundedContacts} onDeleteContact={this.deleteContact} /> */}
+          <ContactList
+            // contacts={foundedContacts}
+            // onDeleteContact={this.deleteContact}
+          />
       </Container>
         <Counter initialValue={10} />
       </>
