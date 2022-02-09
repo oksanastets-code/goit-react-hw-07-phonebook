@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../redux/PhoneBook/phone-book-actions';
+import { addContact } from '../redux/PhoneBook/phone-book-operations';
 import PropTypes from 'prop-types';
 import { Form, Label, InputField, AddButton } from './NameEditor.styled';
 
