@@ -9,7 +9,10 @@ import {
   deleteContactSuccess,
   deleteContactError,
   // deleteContact,
-  changeFilter
+  changeFilter,
+  fetchContactsRequest,
+  fetchContactsSuccess,
+  fetchContactsError,
 } from './phone-book-actions';
 
 // import initialContacts from '../../Phonebook/contacts.json';
@@ -17,6 +20,7 @@ import {
 const contacts = createReducer([],
   // initialContacts,
   {
+    [fetchContactsSuccess]: (state, { payload }) => payload,
     [addContactSuccess]: (state, { payload }) => { 
          if (state.find(contact => contact.nick === payload.nick)) {
         const notify = `${payload.nick} is already on list`;
@@ -34,12 +38,16 @@ const filter = createReducer('', {
     [changeFilter]: (_, {payload})=> payload,
 })
 const loading = createReducer(false, {
+  [fetchContactsRequest]: () => true,
+  [fetchContactsSuccess]: () => false,
+  [fetchContactsError]: () => false,
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
   [addContactError]: () => false,
   [deleteContactRequest]: () => true,
   [deleteContactSuccess]: () => false,
-  [deleteContactError]: () => false
+  [deleteContactError]: () => false,
+ 
 })
 export default combineReducers({
   contacts,
