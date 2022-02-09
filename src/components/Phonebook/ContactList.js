@@ -9,6 +9,7 @@ import {
   ContactData,
   DeleteButton,
 } from './ContactList.styled';
+import { useEffect } from 'react';
 
 export default function ContactList() {
   const contacts = useSelector(state => getFoundedContacts(state));
@@ -17,6 +18,7 @@ export default function ContactList() {
   const onFetchContacts = () => dispatch(fetchContacts());
   const onDeleteContact = id => dispatch(deleteContact(id));
   // onFetchContacts();
+  useEffect(() => {onFetchContacts() }, [])
   return (
     <ListWrapper>
       <List>
