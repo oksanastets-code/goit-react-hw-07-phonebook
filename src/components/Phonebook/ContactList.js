@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../redux/PhoneBook/phone-book-actions';
+import { deleteContact } from '../redux/PhoneBook/phone-book-operations';
 import { getFoundedContacts } from 'components/redux/PhoneBook/phone-book-selectors';
 import {
   ListWrapper,

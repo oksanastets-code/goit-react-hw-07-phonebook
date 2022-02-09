@@ -5,7 +5,10 @@ import {
   addContactRequest,
   addContactSuccess,
   addContactError,
-  deleteContact,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
+  // deleteContact,
   changeFilter
 } from './phone-book-actions';
 
@@ -24,7 +27,7 @@ const contacts = createReducer([],
       toast.success(`Contact ${payload.nick} added!`);
       return state;
     },
-    [deleteContact]: (state, {payload}) => state.filter(({ id }) => id !== payload),
+    [deleteContactSuccess]: (state, {payload}) => state.filter(({ id }) => id !== payload),
 })
 
 const filter = createReducer('', {
@@ -33,7 +36,10 @@ const filter = createReducer('', {
 const loading = createReducer(false, {
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
-  [addContactError]: () => false
+  [addContactError]: () => false,
+  [deleteContactRequest]: () => true,
+  [deleteContactSuccess]: () => false,
+  [deleteContactError]: () => false
 })
 export default combineReducers({
   contacts,
