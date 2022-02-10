@@ -26,10 +26,13 @@ export const addContact = ({ nick, number }) => dispatch => {
     number: number,
   }
   
-  dispatch(addContactRequest());
+    dispatch(addContactRequest());
 
   axios.post('/contacts', contact)
-    .then(({ data }) => dispatch(addContactSuccess(data)))
+      .then(({ data }) => {
+          console.log('contact', contact);
+          dispatch(addContactSuccess(data))
+      })
     .catch(error => dispatch(addContactError(error)))
 }
 
