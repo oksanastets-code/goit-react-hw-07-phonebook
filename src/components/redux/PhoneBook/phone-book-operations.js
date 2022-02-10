@@ -30,7 +30,6 @@ export const addContact = ({ nick, number }) => dispatch => {
 
   axios.post('/contacts', contact)
       .then(({ data }) => {
-          console.log('contact', contact);
           dispatch(addContactSuccess(data))
       })
     .catch(error => dispatch(addContactError(error)))
@@ -42,7 +41,3 @@ export const deleteContact = id => dispatch => {
         .then(() => dispatch(deleteContactSuccess(id)))
     .catch(error => dispatch(deleteContactError(error)))
 }
-
-// const getContacts = () => {
-    // return axios.get('/contacts').then(r => r.data)
-// }

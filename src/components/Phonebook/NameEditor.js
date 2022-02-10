@@ -14,11 +14,9 @@ export default function NameEditor() {
     switch (name) {
       case 'nick':
         setNick(value);
-        console.log(nick);
         break;
       case 'number':
         setNumber(value);
-        console.log(number);
         break;
       default:
         return;
