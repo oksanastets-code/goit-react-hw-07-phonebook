@@ -27,7 +27,7 @@ export default function ContactList() {
               {nick}: {number}
             </ContactData>
             <DeleteButton onClick={() => onDeleteContact(id)}>
-              Delete
+              Delete blabla
             </DeleteButton>
           </ContactItem>
         ))}
